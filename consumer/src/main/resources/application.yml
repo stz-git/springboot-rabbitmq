@@ -1,0 +1,22 @@
+#factory.setHost("192.168.13.45");
+#factory.setPort(5672);
+#factory.setVirtualHost("/tianyu");
+#factory.setUsername("root");
+#factory.setPassword("root");
+spring:
+  rabbitmq:
+    host: 192.168.13.45
+    port: 5672
+    username: root
+    password: root
+    virtual-host: /tianyu
+
+    listener:
+      simple:
+        retry:
+          enabled: true
+          max-attempts: 3
+          initial-interval: 3000
+        acknowledge-mode: manual
+server:
+  port: 8081
